@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Hand-tailored Music Player</title>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="logo">
+        <div class="logo-img">
+          <img src="Images/logo.jpg" alt="Logo" />
+        </div>
+        <div class="logo-text">Sound Haven</div>
+      </div>
+      <div class="search-container">
+        <input
+          class="search-input"
+          type="text"
+          placeholder="Search what you want to play..."
+        />
+        <button class="search-btn">
+          <ion-icon name="search"></ion-icon>
+        </button>
+      </div>
+      <div class="header-controls">
+        <button class="icon-btn">
+          <ion-icon name="notifications"></ion-icon>
+        </button>
+        <button class="icon-btn">
+          <ion-icon name="cog"></ion-icon>
+        </button>
+        <div class="user-profile">
+          <img
+            class="profile-pic"
+            src="Images/profile image.jpg"
+            alt="profile"
+          />
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <main>
+        <section class="featured-section">
+          <div class="section-header">
+            <h2>
+              <ion-icon name="thumbs-up-outline"></ion-icon> Trending Hits
+            </h2>
+            <a href="#" class="view-all">View All</a>
+          </div>
+          <div class="carousel-container">
+            <div class="carousel-card">
+              <div class="card-img">
+                <img
+                  src="Images/maxresdefault (1).jpg"
+                  alt="The Way of The Tears Cover Image"
+                />
+              </div>
+              <div class="card-info">
+                <div class="card-credits">
+                  <h3>The Way of The Tears</h3>
+                  <p>Muhammad Al Muqit</p>
+                  <audio controls class="mp3">
+                    <source
+                      src="mp3/The Way of The Tears.mp3"
+                      type="audio/mpeg"
+                    />
+                  </audio>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-card">
+              <div class="card-img">
+                <img src="Images/download.png" alt="Ya Quluban Cover Image" />
+              </div>
+              <div class="card-info">
+                <div class="card-credits">
+                  <h3>Ya Quluban</h3>
+                  <p>Abdullah al Sinani</p>
+                  <audio controls class="mp3">
+                    <source src="mp3/Ya Quluban.mp3" type="audio/mpeg" />
+                  </audio>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-card">
+              <div class="card-img">
+                <img src="Images/maxresdefault.jpg" alt="Grieving Cry Image" />
+              </div>
+              <div class="card-info">
+                <div class="card-credits">
+                  <h3>Grieving Cry</h3>
+                  <p>Muhammad Al Muqit</p>
+                  <audio controls class="mp3">
+                    <source src="mp3/Grieving Cry .mp3" type="audio/mpeg" />
+                  </audio>
+                </div>
+
+              </div>
+            </div>
+            <div class="carousel-card">
+              <div class="card-img">
+                <img
+                  src="Images/mqdefault.jpg"
+                  alt="Aya Man Yadda'i Al-Fahm cover image"
+                />
+              </div>
+              <div class="card-info">
+                <div class="card-credits">
+                  <h3>Aya Man Yadda'i Al-Fahm</h3>
+                  <p>Mishary Rashid Alafasy</p>
+                        <audio controls class="mp3">
+                    <source
+                      src="mp3/Aya Man Yadail Fahm.mp3  "
+                      type="audio/mpeg"
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="featured-nashidists">
+          <div class="section-header">
+            <h2><ion-icon name="people"></ion-icon> Featured Nashidists</h2>
+            <a href="#" class="view-all">View All</a>
+          </div>
+          <div class="artists-container">
+            <div class="artists-box">
+              <img src="Images/artist1.jpg" alt="Muhammad al Muqit" />
+              <h3>Muhammad Al Muqit</h3>
+            </div>
+            <div class="artists-box">
+              <img src="Images/artist2.jpg" alt="Mishary Rashid Al Alafasy" />
+              <h3>Mishary Rashid Al Alafasy</h3>
+            </div>
+            <div class="artists-box">
+              <img src="Images/artist3.jpg" alt="Abdullah al Sinani" />
+              <h3>Abdullah Al Sinani</h3>
+            </div>
+            <div class="artists-box" >
+              <img src="Images/artist4.jpg" alt="Zain Bikha" />
+              <h3>Zain Bikha</h3>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+    <script>
+  // Get all audio elements on the page
+  const audios = document.querySelectorAll("audio");
+
+  audios.forEach(audio => {
+    audio.addEventListener("play", () => {
+      // Pause all other audios
+      audios.forEach(other => {
+        if (other !== audio) {
+          other.pause();
+        }
+      });
+    });
+  });
+</script>
+  </body>
+</html>
