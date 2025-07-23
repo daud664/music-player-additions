@@ -148,16 +148,5 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
-    <script>
-  const audios = document.querySelectorAll("audio");
-
-  audios.forEach(current => {
-    current.addEventListener("play", () => {
-      audios.forEach(other => {
-        if (other !== current) other.pause();
-      });
-    });
-  });
-</script>
   </body>
 </html>
